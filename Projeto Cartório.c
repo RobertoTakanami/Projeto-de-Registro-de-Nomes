@@ -141,7 +141,8 @@ int main()
 		printf("Escolha uma das opções a baixo\n\n");
 		printf("\t1 - REGISTRAR\n");
 		printf("\t2 - CONSULTAR\n");
-		printf("\t3 - EXCLUIR\n\n"); 
+		printf("\t3 - EXCLUIR\n\n");
+		printf("\t0 - SAIR\n\n "); 
 		printf("Opções do sistema:\n\n"); //final do menu
 	
 		scanf("%d", &opcao); //escolha do usuario
@@ -204,10 +205,28 @@ int main()
 			
 			break;
 			
+			case 0:
+				printf(" Deseja Sair do Sistema?\n 1 - Sim   2 - Não\n");
+				scanf("%d",&voltar);
+				
+				if(voltar==1)
+				{
+					return 0;
+					break;
+				}
+				else
+				{
+					system("cls"); //Limpar a tela
+					printf("\nVoltando ao Menu\n\n"); //Informa que vai voltar ao Menu
+					system("pause");
+				}
+				break;
+			
 			default:
 			printf("  Opção Inválida! Tente de novo\n\n");
 			system("pause");
 			break;
+			
 		} //Fim da seleção
 	}
 }
