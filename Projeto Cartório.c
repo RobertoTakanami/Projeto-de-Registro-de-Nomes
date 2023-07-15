@@ -128,105 +128,119 @@ int main()
 	int opcao=0; 
 	int laco=1;
 	int voltar=0;
-	//Fim da definição de variaveis
+	char senhainserida[10]="a";
+	int comparacao;
 	
-	for(laco=1;laco=1;)
+	printf("###Cartório de nomes da EBAC###\n\n"); 
+	printf(" Login:\n\n");
+	scanf("%s",senhainserida);
+	
+	comparacao = strcmp(senhainserida, "admin");
+		
+	if(comparacao == 0)
 	{
-
-		system("cls"); //Limpar a tela
-		
-		setlocale(LC_ALL, "Portuguese"); // definindo a linguagem
-	
-		printf("###Cartório de nomes da EBAC###\n\n"); //inicio do menu
-		printf("Escolha uma das opções a baixo\n\n");
-		printf("\t1 - REGISTRAR\n");
-		printf("\t2 - CONSULTAR\n");
-		printf("\t3 - EXCLUIR\n\n");
-		printf("\t0 - SAIR\n\n "); 
-		printf("Opções do sistema:\n\n"); //final do menu
-	
-		scanf("%d", &opcao); //escolha do usuario
-		
-		system("cls"); //Limpar a tela
-		
-		switch(opcao)
+			
+		for(laco=1;laco=1;)
 		{
-			case 1:
-				printf(" Deseja registar um Usuário?\n 1 - Sim   2 - Não\n");
-				scanf("%d",&voltar);
-				
-				if(voltar==1)
-				{
-					registro(); //Chamada de funções	
-				}
-				else
-				{
-					system("cls"); //Limpar a tela
-					printf("\nVoltando ao Menu\n\n"); //Informa que vai voltar ao Menu
-					system("pause");
-				}
-				break;
-				
-			break;
-			
-			case 2:
-				printf(" Deseja Consultar um Usuário?\n 1 - Sim   2 - Não\n");
-				scanf("%d",&voltar);
-				
-				if(voltar==1)
-				{
-					consulta(); //Chamada de funções	
-				}
-				else
-				{
-					system("cls"); //Limpar a tela
-					printf("\nVoltando ao Menu\n\n"); //Informa que vai voltar ao Menu
-					system("pause");
-				}
-				break;
+
+			system("cls"); //Limpar a tela
 		
-			break;
-			
-			case 3:
-				printf(" Deseja Deletar um Usuário?\n 1 - Sim   2 - Não\n");
-				scanf("%d",&voltar);
+			setlocale(LC_ALL, "Portuguese"); // definindo a linguagem
+	
+			printf("###Cartório de nomes da EBAC###\n\n"); //inicio do menu
+			printf(" Escolha uma das opções a baixo:\n\n");
+			printf("\t1 - REGISTRAR\n");
+			printf("\t2 - CONSULTAR\n");
+			printf("\t3 - EXCLUIR\n\n");
+			printf("\t0 - SAIR\n\n "); 
+			printf("Opções do sistema:\n\n"); //final do menu
+	
+			scanf("%d", &opcao); //escolha do usuario
+		
+			system("cls"); //Limpar a tela
+		
+			switch(opcao)
+			{
+				case 1:
+					printf(" Deseja registar um Usuário?\n 1 - Sim   2 - Não\n");
+					scanf("%d",&voltar);
 				
-				if(voltar==1)
-				{
-					deletar(); //Chamada de funções	
-				}
-				else
-				{
-					system("cls"); //Limpar a tela
-					printf("\nVoltando ao Menu\n\n"); //Informa que vai voltar ao Menu
-					system("pause");
-				}
-				break;
-			
-			break;
-			
-			case 0:
-				printf(" Deseja Sair do Sistema?\n 1 - Sim   2 - Não\n");
-				scanf("%d",&voltar);
-				
-				if(voltar==1)
-				{
-					return 0;
+					if(voltar==1)
+					{
+						registro(); //Chamada de funções	
+					}
+					else
+					{
+						system("cls"); //Limpar a tela
+						printf("\nVoltando ao Menu\n\n"); //Informa que vai voltar ao Menu
+						system("pause");
+					}
 					break;
-				}
-				else
-				{
-					system("cls"); //Limpar a tela
-					printf("\nVoltando ao Menu\n\n"); //Informa que vai voltar ao Menu
-					system("pause");
-				}
+				
 				break;
 			
-			default:
-			printf("  Opção Inválida! Tente de novo\n\n");
-			system("pause");
-			break;
+				case 2:
+					printf(" Deseja Consultar um Usuário?\n 1 - Sim   2 - Não\n");
+					scanf("%d",&voltar);
+				
+					if(voltar==1)
+					{
+						consulta(); //Chamada de funções	
+					}
+					else
+					{
+						system("cls"); //Limpar a tela
+						printf("\nVoltando ao Menu\n\n"); //Informa que vai voltar ao Menu
+						system("pause");
+					}
+					break;	
+						
+				break;
+							
+				case 3:
+					printf(" Deseja Deletar um Usuário?\n 1 - Sim   2 - Não\n");
+					scanf("%d",&voltar);
+				
+					if(voltar==1)
+					{
+						deletar(); //Chamada de funções	
+					}
+					else
+					{
+						system("cls"); //Limpar a tela
+						printf("\nVoltando ao Menu\n\n"); //Informa que vai voltar ao Menu
+						system("pause");
+					}
+					break;
 			
-		} //Fim da seleção
+				break;
+			
+				case 0:
+					printf(" Deseja Sair do Sistema?\n 1 - Sim   2 - Não\n");
+					scanf("%d",&voltar);
+				
+					if(voltar==1)
+					{
+						return 0;
+						break;
+					}
+					else
+					{
+						system("cls"); //Limpar a tela
+						printf("\nVoltando ao Menu\n\n"); //Informa que vai voltar ao Menu
+						system("pause");
+					}
+					break;
+							
+				default:
+				printf("  Opção Inválida! Tente de novo\n\n");
+				system("pause");
+				break;	
+					
+			} //Fim da seleção
+		}
 	}
+	else
+		system("cls");
+		printf("Senha Incorreta!");	
 }
