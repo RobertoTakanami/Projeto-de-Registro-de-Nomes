@@ -160,15 +160,21 @@ int main()
 	int laco=1;
 	int voltar=0;
 	char senhainserida[10]="a";
-	int comparacao;
+	char login[10]="a";
+	int comparacaosenha;
+	int comparacaologin;
 	
 	printf("###Cartório de nomes da EBAC###\n\n"); 
-	printf(" Senha admin:\n\n");
+	printf(" Login: ");
+	scanf("%s",login);
+	printf(" Senha: ");	
 	scanf("%s",senhainserida);
 	
-	comparacao = strcmp(senhainserida, "admin");
+	comparacaologin = strcmp(login, "Admin");
+	
+	comparacaosenha = strcmp(senhainserida, "admin");
 		
-	if(comparacao == 0)
+	if(comparacaosenha == 0 && comparacaologin == 0)
 	{
 			
 		for(laco=1;laco=1;)
@@ -273,5 +279,5 @@ int main()
 	}
 	else
 		system("cls");
-		printf("Senha Incorreta!");	
+		printf("\nLogin ou Senha Incorreta!\n");	
 }
