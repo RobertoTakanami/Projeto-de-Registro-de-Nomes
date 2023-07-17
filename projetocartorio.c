@@ -159,10 +159,11 @@ int main()
 	int opcao=0; 
 	int laco=1;
 	int voltar=0;
-	char senhainserida[10]="a";
-	char login[10]="a";
 	int comparacaosenha;
 	int comparacaologin;
+	char senhainserida[10]="a";
+	char login[10]="a";
+	
 	
 	printf("###Cartório de nomes da EBAC###\n\n"); 
 	printf(" Login: ");
@@ -175,11 +176,9 @@ int main()
 	comparacaosenha = strcmp(senhainserida, "admin");
 		
 	if(comparacaosenha == 0 && comparacaologin == 0)
-	{
-			
+	{			
 		for(laco=1;laco=1;)
 		{
-
 			system("cls"); //Limpar a tela
 		
 			setlocale(LC_ALL, "Portuguese"); // definindo a linguagem
@@ -279,5 +278,5 @@ int main()
 	}
 	else
 		system("cls");
-		printf("\nLogin ou Senha Incorreta!\n");	
+		printf("\nLogin ou Senha Incorretos!\n");	
 }
